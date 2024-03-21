@@ -25,4 +25,7 @@ click 'Save' button to add the new student and their advisors to database tables
 
 'Search student' button will switch page and user will be able to choose an advisor from dropdown list to search all students that advisor has.
 
+
+### And finally
+I have tested it many times but there still may be some bugs.
 Enjoy and share your thoughts!

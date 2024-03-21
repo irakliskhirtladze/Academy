@@ -14,7 +14,8 @@ class Student:
         self.student_id = curs.lastrowid
         conn.commit()
 
-    def get_advisor_id(self, advisor_name, advisor_surname):
+    @staticmethod
+    def get_advisor_id(advisor_name, advisor_surname):
         """Get advisor ID for based on given advisor name and surname"""
         curs.execute("SELECT id FROM advisor WHERE name = ? AND surname = ?", (advisor_name, advisor_surname))
         return curs.fetchone()[0]
@@ -32,7 +33,8 @@ class Advisor:
         self.surname = surname
         self.advisor_id = primary_key
 
-    def get_students(self, advisor_id):
+    @staticmethod
+    def get_students(advisor_id):
         """Get students for the given advisor"""
 
         query = """
@@ -45,10 +47,10 @@ class Advisor:
         rows = curs.fetchall()
         return rows
     
-    def get_students_count(self, advisor_id):
+    @staticmethod
+    def get_students_count(advisor_id):
         query = """SELECT COUNT (DISTINCT student_id)
                      FROM advisor_student WHERE advisor_id = ?"""
         curs.execute(query, (advisor_id,))
         return curs.fetchone()[0]
         
-    

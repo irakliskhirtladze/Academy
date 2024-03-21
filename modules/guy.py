@@ -67,11 +67,11 @@ class Academy(QMainWindow):
                     advisor_id = student.get_advisor_id(advisor_name, advisor_surname)
                     student.add_advisor_student_relation(advisor_id)
 
-                self.ui.label_10.setStyleSheet({"color: green; background-color: transparent"})
+                self.ui.label_10.setStyleSheet("color: green; background-color: transparent")
                 self.ui.label_10.setText('Success')
 
             else:
-                self.ui.label_10.setStyleSheet({"color: red; background-color: transparent"})
+                self.ui.label_10.setStyleSheet("color: red; background-color: transparent")
                 self.ui.label_10.setText('Please add advisor')
 
         else:
